@@ -1,0 +1,9 @@
+
+application:
+  clients:
+    coco:
+      skipCertificate: false
+      basePath: https://monitor.edugain.org/coco/json.php
+      connectTimeout: 5000
+      readTimeout: 30000
+  

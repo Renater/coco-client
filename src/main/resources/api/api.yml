@@ -1,0 +1,92 @@
+swagger: "2.0"
+info:
+  description: "eduGAIN Coco check JSON interface contract"
+  version: "1.0.0"
+  title: "Coco Check"
+  termsOfService: "https://wiki.geant.org/display/eduGAIN/Code+of+Conduct+Monitoring+Tool"
+host: "monitor.edugain.org"
+basePath: "/coco/json.php"
+tags:
+- name: coco
+schemes:
+- https
+paths:
+  /:
+    get:
+      description: If called without parameters feed shows only "green" and "yellow" entities (entities with id_status=2 or id_status=3).
+      tags:
+      - coco
+      operationId: getStatus
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Ok
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/CocoResult"
+    parameters:
+    - name: all_sps
+      in: query
+      description: Fetch all entites
+      required: false
+      type: boolean
+    - name: entityid
+      in: query
+      description: Entity to fetch
+      required: false
+      type: string
+    - name: attributes
+      in: query
+      description: Comma separated list of required attributes (see termsOfService URL for details)
+      required: false
+      type: string
+    
+definitions:
+  CocoResult:
+    type: object
+    properties:
+      entityID:
+        type: string
+        description: SP's SAML2 entityID
+      registrationAuthority:
+        type: string
+        description: mdrpi:RegistrationInfo element’s registrationAuthority attribute
+      DisplayName:
+        type: string
+        description: mdui:displayName element. If multivalued, only the value with xml:lang="en" is present
+      first_seen:
+        type: string
+        description: Timestamp when the monitoring tool has first encountered this SP
+      last_seen:
+        type: string
+        description: Timestamp when the monitoring tool has last encountered this SP
+      id_status:
+        type: string
+        description: Observed colour of the SP; see the table above
+      status:
+        type: string
+        description: Textual representation of the id_status attribute
+      PrivacyStatementURL:
+        type: string
+        description: mdui:PrivacyStatementURL element. If multivalued, only the value with xml:lang="en" is present
+      code:
+        type: string
+        description: HTTP status code when when fetching the page to which mdui:PrivacyStatementURL resolves
+      code_txt:
+        type: string
+        description: HTTP status code description
+      content_type:
+        type: string
+        description: The content type of the page to which mdui:PrivacyStatementURL resolves
+      headers:
+        type: string
+        description: Headers of the page to which mdui:PrivacyStatementURL resolves
+      cookies:
+        type: string
+        description: Cookies of the page to which mdui:PrivacyStatementURL resolves
+      source_b64:
+        type: string
+        description: A copy of the last archived page to which mdui:PrivacyStatementURL resolves (BASE64 encoded)
+
