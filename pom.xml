@@ -10,16 +10,13 @@
 
 	<url>https://wiki.geant.org/display/eduGAIN/Code+of+Conduct+Monitoring+Tool</url>
 
-	<distributionManagement>
-		<repository>
-			<id>sourcesup</id>
-			<url>https://sourcesup.renater.fr/nexus/content/repositories/ges  tion-fede-releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>sourcesup</id>
-			<url>https://sourcesup.renater.fr/nexus/content/repositories/gestion-fede-snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<properties>
 		<maven.version>3.0.0</maven.version>
