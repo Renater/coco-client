@@ -4,9 +4,7 @@ import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.net.ssl.SSLContext;
@@ -23,11 +21,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
 import org.springframework.http.client.BufferingClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -77,13 +73,13 @@ public class CocoClient {
 
 		for (HttpMessageConverter converter : restTemplate.getMessageConverters()) {
 
-			if (converter instanceof AbstractJackson2HttpMessageConverter) {
-				// Workaround text/html media type
-				List<MediaType> supportedMediaTypes = new ArrayList<>();
-				supportedMediaTypes.addAll(((AbstractJackson2HttpMessageConverter) converter).getSupportedMediaTypes());
-				supportedMediaTypes.add(MediaType.TEXT_HTML);
-				((AbstractJackson2HttpMessageConverter) converter).setSupportedMediaTypes(supportedMediaTypes);
-			}
+//			if (converter instanceof AbstractJackson2HttpMessageConverter) {
+//				// Workaround text/html media type
+//				List<MediaType> supportedMediaTypes = new ArrayList<>();
+//				supportedMediaTypes.addAll(((AbstractJackson2HttpMessageConverter) converter).getSupportedMediaTypes());
+//				supportedMediaTypes.add(MediaType.TEXT_HTML);
+//				((AbstractJackson2HttpMessageConverter) converter).setSupportedMediaTypes(supportedMediaTypes);
+//			}
 
 //			if (converter instanceof AbstractJackson2HttpMessageConverter) {
 //				ObjectMapper mapper = ((AbstractJackson2HttpMessageConverter) converter).getObjectMapper();
