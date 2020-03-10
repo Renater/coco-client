@@ -21,11 +21,13 @@
   <distributionManagement>
 		<repository>
 			<id>sourcesup</id>
-			<url>https://sourcesup.renater.fr/nexus/content/repositories/gestion-fede-releases</url>
+			<url>https://sourcesup.renater.fr/nexus/repository/gestion-fede-releases</url>
+      <!-- <url>https://sourcesup.renater.fr/nexus/content/repositories/gestion-fede-releases</url> -->
 		</repository>
 		<snapshotRepository>
 			<id>sourcesup</id>
-			<url>https://sourcesup.renater.fr/nexus/content/repositories/gestion-fede-snapshots</url>
+			<url>https://sourcesup.renater.fr/nexus/repository/gestion-fede-snapshots</url>
+      <!-- <url>https://sourcesup.renater.fr/nexus/content/repositories/gestion-fede-snapshots</url> -->
 		</snapshotRepository>
 	</distributionManagement>
 
