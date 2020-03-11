@@ -61,9 +61,11 @@ definitions:
         description: mdui:displayName element. If multivalued, only the value with xml:lang="en" is present
       first_seen:
         type: string
+        format: date-time
         description: Timestamp when the monitoring tool has first encountered this SP
       last_seen:
         type: string
+        format: date-time
         description: Timestamp when the monitoring tool has last encountered this SP
       id_status:
         type: string
