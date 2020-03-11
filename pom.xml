@@ -5,7 +5,7 @@
 	<groupId>org.edugain.monitor</groupId>
 	<artifactId>coco-client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<name>coco-client</name>
 
 	<url>https://wiki.geant.org/display/eduGAIN/Code+of+Conduct+Monitoring+Tool</url>
