@@ -78,15 +78,7 @@ public class CocoClient {
 				// Buffered Client in order to use interceptor logger
 				.requestFactory(() -> new BufferingClientHttpRequestFactory(reqFactory)).build();
 
-		for (HttpMessageConverter converter : restTemplate.getMessageConverters()) {
-
-//			if (converter instanceof AbstractJackson2HttpMessageConverter) {
-//				// Workaround text/html media type
-//				List<MediaType> supportedMediaTypes = new ArrayList<>();
-//				supportedMediaTypes.addAll(((AbstractJackson2HttpMessageConverter) converter).getSupportedMediaTypes());
-//				supportedMediaTypes.add(MediaType.TEXT_HTML);
-//				((AbstractJackson2HttpMessageConverter) converter).setSupportedMediaTypes(supportedMediaTypes);
-//			}
+		for (HttpMessageConverter<?> converter : restTemplate.getMessageConverters()) {
 
 			if (converter instanceof AbstractJackson2HttpMessageConverter) {
 				ObjectMapper mapper = ((AbstractJackson2HttpMessageConverter) converter).getObjectMapper();
