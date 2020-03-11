@@ -1,6 +1,5 @@
 package org.edugain.monitor.coco.client;
 
-import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
 import java.io.IOException;
@@ -23,17 +22,20 @@ public class BaseTest extends Assertions {
 	public void addUniTestInterceptor(RestTemplate restTemplate) {
 		List<ClientHttpRequestInterceptor> currentInterceptors = restTemplate.getInterceptors();
 
-		@Override
-		public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
-				throws IOException {
-			try {
-				ClientHttpResponse response = execution.execute(request, body);
-				return response;
-			} catch (Exception e) {
-				assumeTrue(false);
-				return null;
+		ClientHttpRequestInterceptor interceptor = new ClientHttpRequestInterceptor() {
+
+			@Override
+			public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
+					throws IOException {
+				try {
+					ClientHttpResponse response = execution.execute(request, body);
+					return response;
+				} catch (Exception e) {
+					assumeTrue(false);
+					return null;
+				}
 			}
-		}
+		};
 
 		currentInterceptors.add(interceptor);
 		restTemplate.setInterceptors(currentInterceptors);
