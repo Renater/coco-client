@@ -47,6 +47,9 @@ definitions:
   CocoResult:
     type: object
     properties:
+      id:
+        type: string
+        description: ID of the SP in Coco check Monitoring tool
       entityID:
         type: string
         description: SP's SAML2 entityID
