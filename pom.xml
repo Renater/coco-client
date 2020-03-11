@@ -5,7 +5,7 @@
 	<groupId>org.edugain.monitor</groupId>
 	<artifactId>coco-client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>coco-client</name>
 
 	<url>https://wiki.geant.org/display/eduGAIN/Code+of+Conduct+Monitoring+Tool</url>
@@ -22,12 +22,10 @@
 		<repository>
 			<id>sourcesup</id>
 			<url>https://sourcesup.renater.fr/nexus/repository/gestion-fede-releases</url>
-      <!-- <url>https://sourcesup.renater.fr/nexus/content/repositories/gestion-fede-releases</url> -->
 		</repository>
 		<snapshotRepository>
 			<id>sourcesup</id>
 			<url>https://sourcesup.renater.fr/nexus/repository/gestion-fede-snapshots</url>
-      <!-- <url>https://sourcesup.renater.fr/nexus/content/repositories/gestion-fede-snapshots</url> -->
 		</snapshotRepository>
 	</distributionManagement>
 
