@@ -16,7 +16,7 @@ import org.apache.http.ssl.SSLContexts;
 import org.edugain.monitor.coco_client.ApiClient;
 import org.edugain.monitor.coco_client.api.CocoApi;
 import org.edugain.monitor.coco_client.model.CocoResult;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.client.BufferingClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
